@@ -1,0 +1,118 @@
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    transition: var(--transition);
+}
+nav.scrolled{
+    padding: 0.8rem 5%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.logo{
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    z-index: 1001;
+}
+
+.logo span{
+    color: var(--accent);
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-link{
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-link a{
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.nav-link a:hover{
+    color: var(--accent-light);
+}
+
+.nav-link a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: var(--transition);
+}
+.nav-links a:hover::before {
+            width: 100%;
+        }
+
+.nav-status {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+.nav-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+.burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+.burger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            margin: 3px 0;
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+.burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+.burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+.burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -8px);
+        }
+
