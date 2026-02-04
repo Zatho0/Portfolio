@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Layout/Navbar/Navbar';
 import MobileMenu from './components/Layout/MobileMenu/MobileMenu';
 import Footer from './components/Layout/Footer/Footer';
@@ -22,6 +23,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
