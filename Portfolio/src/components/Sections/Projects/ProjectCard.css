@@ -1,0 +1,130 @@
+.project-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  transition: var(--transition);
+  cursor: pointer;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+}
+
+.project-card__image {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--start-color, #1e3a8a), var(--end-color, #3b82f6));
+}
+
+.project-card__image.from-blue-900 {
+  --start-color: #1e3a8a;
+  --end-color: #3b82f6;
+}
+
+.project-card__image.from-cyan-900 {
+  --start-color: #164e63;
+  --end-color: #06b6d4;
+}
+
+.project-card__image.from-indigo-900 {
+  --start-color: #312e81;
+  --end-color: #6366f1;
+}
+
+.project-card__arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 2rem;
+  color: white;
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 2;
+}
+
+.project-card:hover .project-card__arrow {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.project-card__image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.project-card:hover .project-card__image::after {
+  opacity: 0.8;
+}
+
+.project-card__content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card__category {
+  color: var(--accent-cyan);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.project-card__title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s;
+}
+
+.project-card:hover .project-card__title {
+  color: var(--accent);
+}
+
+.project-card__description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.project-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.project-card__tech span {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-light);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  font-weight: 500;
+}
+.project-card__image {
+  background-size: cover;
+  background-position: center;
+}
